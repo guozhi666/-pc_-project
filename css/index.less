@@ -1,44 +1,75 @@
-*{
+* {
   padding: 0;
-  margin:0;
+  margin: 0;
 }
-html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin: 0px;padding: 0px;font: 14px "微软雅黑";}
-ul{
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "微软雅黑";
+}
+
+ul {
   list-style: none;
 }
-a{
+
+a {
   text-decoration: none;
   display: block;
 }
-img{
+
+img {
   display: block;
 }
-html, body{
+
+html, body {
   height: 100%;
   overflow: hidden;
 }
+
 /*清除浮动*/
-.clearfix{*zoom: 1;}
-.clearfix:after{content: "";display: block;clear: both;}
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 
-#wrap{
+#wrap {
   width: 100%;
   /*title公共样式*/
-  .commonTitle{ color:#009ee0; font-size:80px; line-height:0.8;
-    font-weight:bold; letter-spacing:-5px;
+
+  .commonTitle {
+    color: #009ee0;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+    user-select: none;
   }
+
   /*text公共样式*/
-  .commonText{ color:white; line-height:1.5; font-size:15px;}
+
+  .commonText {
+    color: white;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+
   //开机动画
-  #mask{
+  #mask {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 5;
-    &>div{
+
+    & > div {
       position: absolute;
       left: 0;
       width: 100%;
@@ -46,67 +77,78 @@ html, body{
       background-color: #009ee0;
       transition: 1s linear;
     }
-    .maskUp{
+
+    .maskUp {
       top: 0;
     }
-    .maskDown{
+
+    .maskDown {
       bottom: 0;
     }
-    .maskLine{
+
+    .maskLine {
       position: absolute;
       top: 50%;
       left: 0;
       width: 0%;
       height: 4px;
-      background-color:white ;
+      background-color: white;
       z-index: 6;
       transition: 1s;
     }
   }
-  #headerWrap{
+
+  #headerWrap {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 80px;
-    .header{
-      margin: 0 auto ;
+
+    .header {
+      margin: 0 auto;
       width: 1100px;
       height: 80px;
       //logo
-      .logo{
+      .logo {
         margin-top: 15px;
         float: left;
 
       }
+
       //右侧导航
-      .nav{
+      .nav {
         float: right;
         margin-top: 50px;
-        .navList{
-          .navItem{
+
+        .navList {
+          .navItem {
             float: left;
             margin-left: 40px;
             position: relative;
-            a{
-              .up{
+
+            a {
+              .up {
                 position: absolute;
                 top: 0;
                 left: 0;
                 color: #0F0F0F;
                 width: 0;
                 overflow: hidden;
-                transition:1s width;
+                transition: 1s width;
               }
-              .down{
+
+              .down {
                 color: #009EE0;
               }
             }
-            &:hover .up{
-              width:100%;
+
+            &:hover .up {
+              width: 100%;
             }
           }
         }
       }
-      .arrow{
+
+      .arrow {
         position: absolute;
         left: 50%;
         bottom: -11px;
@@ -114,49 +156,57 @@ html, body{
         width: 21px;
         height: 11px;
         background-image: url("../img/arrow.png");
-        transition:1s ;
+        transition: 1s;
         z-index: 3;
       }
     }
   }
-  #content{
+
+  #content {
     position: relative;
     width: 100%;
     background: #0F0F0F;
     overflow: hidden;
-    .contentList{
+
+    .contentList {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       background: grey;
-      transition:1s;
+      transition: 1s;
       //第一屏
-      .contentItem{
+      .contentItem {
         position: relative;
         width: 100%;
         background-repeat: no-repeat;
-        &:nth-child(1){
+
+        &:nth-child(1) {
           background-image: url("../img/bg1.jpg");
           background-size: 100% 100%;
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
           background-image: url("../img/bg2.jpg");
           background-size: 100% 100%;
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
           background-image: url("../img/bg3.jpg");
           background-size: 100% 100%;
         }
-        &:nth-child(4){
+
+        &:nth-child(4) {
           background-image: url("../img/bg4.jpg");
           background-size: 100% 100%;
         }
-        &:nth-child(5){
+
+        &:nth-child(5) {
           background-image: url("../img/bg5.jpg");
           background-size: 100% 100%;
         }
-        .contentInner{
+
+        .contentInner {
           position: absolute;
           top: 0;
           left: 0;
@@ -167,77 +217,90 @@ html, body{
           height: 520px;
 
           //第一屏
-          .homeList{
+          .homeList {
             width: 1100px;
             height: 520px;
             transform-style: preserve-3d;
             perspective: 1000px;
             transition: 1s;
-            .homeItem{
+
+            .homeItem {
               position: absolute;
               top: 0;
               left: 0;
               width: 1100px;
               height: 520px;
               visibility: hidden;
-              &.active{
+
+              &.active {
                 visibility: visible;
               }
-              &>div{
+
+              & > div {
                 text-align: center;
                 line-height: 520px;
                 color: white;
               }
-              &:nth-child(1){
-                background:#dc6c5f;
+
+              &:nth-child(1) {
+                background: #dc6c5f;
               }
-              &:nth-child(2){
-                background:#95dc84;
+
+              &:nth-child(2) {
+                background: #95dc84;
               }
-              &:nth-child(3){
-                background:#64b9d2;
+
+              &:nth-child(3) {
+                background: #64b9d2;
               }
-              &:nth-child(4){
-                background:#000000;
+
+              &:nth-child(4) {
+                background: #000000;
               }
+
               //左侧隐藏，右侧显示
-              &.leftHide{
-                animation:leftH 2s linear;
+              &.leftHide {
+                animation: leftH 2s linear;
                 visibility: hidden;
               }
-              &.rightShow{
-                animation:rightS 2s linear;
+
+              &.rightShow {
+                animation: rightS 2s linear;
                 visibility: visible;
               }
 
               //右侧隐藏，左侧显示
-              &.leftShow{
-                animation:leftS 2s linear;
+              &.leftShow {
+                animation: leftS 2s linear;
                 visibility: visible;
               }
-              &.rightHide{
-                animation:rightH 2s linear;
+
+              &.rightHide {
+                animation: rightH 2s linear;
                 visibility: hidden;
               }
 
             }
           }
+
           //小圆点
-          .homeNav{
+          .homeNav {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             bottom: 0;
             transition: 1s;
-            .homeIcon{
+
+            .homeIcon {
               float: left;
               width: 20px;
               height: 20px;
-              background: rgba(255,255,255,0.5);
+              background: rgba(255, 255, 255, 0.5);
               margin: 2px;
-              box-shadow: 0 0 4px rgba(25,25,25,0.8);
+              box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
               border-radius: 50%;
-              &.active{
+
+              &.active {
                 background: white;
               }
             }
@@ -245,57 +308,69 @@ html, body{
 
         }
       }
+
       //第二屏
-      .course{
+      .course {
         //position: relative;
         overflow: hidden;
-        .course1{
+
+        .course1 {
           margin: 50px;
         }
-        .course2{
+
+        .course2 {
           position: relative;
           z-index: 3;
           width: 400px;
           margin-left: 50px;
         }
-        .course3{
-          position:absolute;
+
+        .course3 {
+          position: absolute;
           top: 70px;
           right: 50px;
           width: 480px;
           z-index: 4;
           transform-style: preserve-3d;
-          .plus{
+
+          .plus {
             position: absolute;
             top: -5px;
             width: 9px;
             height: 410px;
             background-image: url("../img/plus_row.png");
             background-repeat: no-repeat;
-            &:nth-child(1){
+
+            &:nth-child(1) {
               left: -6px;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
               left: 114px;
             }
-            &:nth-child(3){
+
+            &:nth-child(3) {
               left: 234px;
             }
-            &:nth-child(4){
+
+            &:nth-child(4) {
               left: 354px;
             }
-            &:nth-child(5){
+
+            &:nth-child(5) {
               left: 474px;
             }
           }
-          .course3Item{
+
+          .course3Item {
             position: relative;
             float: left;
             width: 120px;
             height: 132px;
             transform-style: preserve-3d;
-            transition:1s ;
-            .front{
+            transition: 1s;
+
+            .front {
               position: absolute;
               top: 0;
               left: 0;
@@ -306,7 +381,8 @@ html, body{
               background-position: center;
               backface-visibility: hidden;
             }
-            .back{
+
+            .back {
               width: 120px;
               height: 132px;
               transform: rotateY(180deg);
@@ -315,49 +391,55 @@ html, body{
               box-sizing: border-box;
               backface-visibility: hidden;
             }
-            &:hover{
-              transform:rotateY(180deg);
+
+            &:hover {
+              transform: rotateY(180deg);
             }
           }
 
         }
-        .plane1{
-          position:absolute;
-          width:359px;
-          height:283px;
+
+        .plane1 {
+          position: absolute;
+          width: 359px;
+          height: 283px;
           background: url("../img/plane1.png") no-repeat;
           left: 300px;
           top: -100px;
           transition: 1s;
         }
-        .plane2{
-          width:309px;
-          height:249px;
+
+        .plane2 {
+          width: 309px;
+          height: 249px;
           background: url("../img/plane2.png") no-repeat;
-          position:absolute;
+          position: absolute;
           left: -100px;
           top: 200px;
           transition: 1s;
         }
-        .plane3{
-          width:230px;
-          height:182px;
-          background:url('../img/plane3.png') no-repeat;
-          position:absolute;
-          left:300px;
-          top:400px;
-          transition:1s;
+
+        .plane3 {
+          width: 230px;
+          height: 182px;
+          background: url('../img/plane3.png') no-repeat;
+          position: absolute;
+          left: 300px;
+          top: 400px;
+          transition: 1s;
         }
       }
+
       //第三屏
-      .works{
-        .works1{
-          margin:50px 0 100px 50px;
+      .works {
+        .works1 {
+          margin: 50px 0 100px 50px;
         }
-        .works2{
+
+        .works2 {
           margin-left: 50px;
           //图片
-          .works2Item{
+          .works2Item {
             overflow: hidden;
             position: relative;
             float: left;
@@ -365,52 +447,61 @@ html, body{
             height: 133px;
             margin-right: 1px;
             z-index: 3;
-            &>img{
-              transition:1s transform;
+
+            & > img {
+              transition: 1s transform;
             }
-            &:last-child{
+
+            &:last-child {
               width: 332px;
               height: 133px;
             }
+
             //遮罩层
-            .mask{
+            .mask {
               position: absolute;
               top: 0;
               left: 0;
-              background: rgba(25,25,25,0.8);
+              background: rgba(25, 25, 25, 0.8);
               color: white;
               width: 100%;
               height: 100%;
               //visibility: visible;
-              transition:1s;
+              transition: 1s;
               opacity: 0;
-              &>span{
+
+              & > span {
                 margin: 10px;
               }
-              .icon{
+
+              .icon {
                 background-image: url("../img/zoomico.png");
                 width: 32px;
                 height: 34px;
                 margin: 0 auto;
                 text-align: center;
                 margin-top: 10px;
-                transition:1s;
+                transition: 1s;
               }
             }
-            &:hover .mask{
+
+            &:hover .mask {
               opacity: 1;
             }
-            &:hover .icon{
+
+            &:hover .icon {
               background-position: 0 -35px;
             }
-            &:hover .imgs{
+
+            &:hover .imgs {
               transform: rotate(30deg) scale(1.8);
             }
           }
 
         }
-        .works3{
-          .robot{
+
+        .works3 {
+          .robot {
             background-image: url("../img/robot.png");
             background-repeat: no-repeat;
             width: 167px;
@@ -418,161 +509,194 @@ html, body{
             position: absolute;
             left: 900px;
             top: 170px;
-            animation:robotMove 5s linear infinite;
+            animation: robotMove 5s linear infinite;
             z-index: 3;
           }
         }
-        .pencel1{
-          width:180px;
-          height:97px;
-          background:url('../img/pencel1.png') no-repeat;
-          position:absolute;
-          transition:1s;
-          left:500px;
+
+        .pencel1 {
+          width: 180px;
+          height: 97px;
+          background: url('../img/pencel1.png') no-repeat;
+          position: absolute;
+          transition: 1s;
+          left: 500px;
           top: 0;
         }
-        .pencel2{
-          width:268px;
-          height:38px;
-          background:url('../img/pencel2.png') no-repeat;
-          position:absolute;
-          transition:1s;
-          left:300px;
-          top:250px
+
+        .pencel2 {
+          width: 268px;
+          height: 38px;
+          background: url('../img/pencel2.png') no-repeat;
+          position: absolute;
+          transition: 1s;
+          left: 300px;
+          top: 250px
         }
-        .pencel3{
-          width:441px;
-          height:231px;
-          background:url('../img/pencel3.png') no-repeat;
-          position:absolute;
-          transition:1s;
-          left:650px;
-          top:300px;
+
+        .pencel3 {
+          width: 441px;
+          height: 231px;
+          background: url('../img/pencel3.png') no-repeat;
+          position: absolute;
+          transition: 1s;
+          left: 650px;
+          top: 300px;
         }
       }
+
       //第四屏
-      .about{
+      .about {
         position: relative;
-        .about1{
+
+        .about1 {
           margin: 50px 0 100px 50px;
 
         }
-        .about2{
+
+        .about2 {
           width: 400px;
           margin-left: 50px;
         }
-        .about3{
-          .about3Item{
+
+        .about3 {
+          .about3Item {
             position: absolute;
             width: 260px;
             height: 200px;
-            border:5px rgba(255,255,255,0.5) solid;
+            border: 5px rgba(255, 255, 255, 0.5) solid;
             border-radius: 8px;
             z-index: 4;
-            &:nth-child(1){
+
+            &:nth-child(1) {
               transition: 1s;
               left: 750px;
               top: 50px;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
               transition: 1s;
               left: 600px;
               top: 290px;
             }
-            .mask{
+
+            .mask {
+              position: absolute;
+              top: 0;
+              left: 0;
               width: 260px;
               height: 200px;
-              .maskList{
+
+              .maskList {
                 position: absolute;
                 top: 0;
                 left: 0;
-                .maskItem{
+
+                .maskItem {
                   position: relative;
                   overflow: hidden;
                   float: left;
                   width: 130px;
                   height: 100px;
-                  img{
+
+                  img {
                     position: absolute;
                     transition: 1s;
                   }
-                  &:nth-child(1) img{
+
+                  &:nth-child(1) img {
                     top: 0;
                     left: 0;
                   }
-                  &:nth-child(2) img{
+
+                  &:nth-child(2) img {
                     top: 0;
                     right: 0;
                   }
-                  &:nth-child(3) img{
+
+                  &:nth-child(3) img {
                     bottom: 0;
                     left: 0;
                   }
-                  &:nth-child(4) img{
+
+                  &:nth-child(4) img {
                     bottom: 0;
                     right: 0;
                   }
                 }
               }
             }
-            &:hover .maskList .maskItem:nth-child(1) img{
-              top:100px;
+
+            &:hover .maskList .maskItem:nth-child(1) img {
+              top: 100px;
             }
-            &:hover .maskList .maskItem:nth-child(2) img{
-              right:130px;
+
+            &:hover .maskList .maskItem:nth-child(2) img {
+              right: 130px;
             }
-            &:hover .maskList .maskItem:nth-child(3) img{
-              left:130px;
+
+            &:hover .maskList .maskItem:nth-child(3) img {
+              left: 130px;
             }
-            &:hover .maskList .maskItem:nth-child(4) img{
-              bottom:100px;
+
+            &:hover .maskList .maskItem:nth-child(4) img {
+              bottom: 100px;
             }
           }
         }
       }
-      //第五屏
-      .team{
 
-        .team1{
+      //第五屏
+      .team {
+
+        .team1 {
           float: left;
           width: 400px;
           margin: 50px;
           transition: 1s;
         }
-        .team2{
+
+        .team2 {
           float: right;
           margin: 50px;
           margin-bottom: 0;
           width: 400px;
           transition: 1s;
         }
-        .team3{
+
+        .team3 {
           position: relative;
           width: 944px;
           height: 448px;
           margin: 0 auto;
           margin-top: 230px;
-          canvas{
+
+          canvas {
             position: absolute;
             top: 0;
           }
-          .team3Item{
+
+          .team3Item {
             float: left;
             width: 236px;
             height: 448px;
             background-image: url("../img/team.png");
             background-repeat: no-repeat;
             opacity: 0.5;
-            &:nth-child(1){
+
+            &:nth-child(1) {
               background-position: 3px 0px;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
               background-position: -230px 0px;
             }
-            &:nth-child(3){
+
+            &:nth-child(3) {
               background-position: -483px 0px;
             }
-            &:nth-child(4){
+
+            &:nth-child(4) {
               background-position: -710px 0px;
             }
           }
@@ -580,48 +704,87 @@ html, body{
       }
     }
 
-    .menuList{
+    .menuList {
       position: fixed;
       right: 10px;
       top: 50%;
       transform: translateY(-50%);
-      .menuItem{
+
+      .menuItem {
         width: 15px;
         height: 15px;
-        border:1px solid white;
+        border: 1px solid white;
         margin-top: 10px;
         border-radius: 50%;
-        &.active{
+
+        &.active {
           background-color: white;
         }
       }
     }
   }
 }
+
 @keyframes leftH {
-  0%{visibility: visible}
-  50%{transform: translateX(-40%) rotateY(50deg) scale(0.7)}
-  100%{transform:translateZ(-500px)}
+  0% {
+    visibility: visible
+  }
+  50% {
+    transform: translateX(-40%) rotateY(50deg) scale(0.7)
+  }
+  100% {
+    transform: translateZ(-500px)
+  }
 }
+
 @keyframes rightS {
-  0%{visibility:hidden;transform:translateZ(-500px)}
-  50%{transform: translateX(40%) rotateY(-50deg) scale(0.7)}
-  100%{}
+  0% {
+    visibility: hidden;
+    transform: translateZ(-500px)
+  }
+  50% {
+    transform: translateX(40%) rotateY(-50deg) scale(0.7)
+  }
+  100% {
+  }
 }
 
 @keyframes leftS {
-  0%{visibility: hidden; transform: translateZ(-500px)}
-  50%{transform:translateX(-40%) rotateY(50deg) scale(0.8)}
-  100%{}
+  0% {
+    visibility: hidden;
+    transform: translateZ(-500px)
+  }
+  50% {
+    transform: translateX(-40%) rotateY(50deg) scale(0.8)
+  }
+  100% {
+  }
 }
+
 @keyframes rightH {
-  0%{visibility: visible}
-  50%{transform:translateX(40%) rotateY(-50deg) scale(0.7)}
-  100%{transform: translateZ(-500px)}
+  0% {
+    visibility: visible
+  }
+  50% {
+    transform: translateX(40%) rotateY(-50deg) scale(0.7)
+  }
+  100% {
+    transform: translateZ(-500px)
+  }
 }
+
 @keyframes robotMove {
-  0%{transform: rotateY(0deg)}
-  49%{left:40%; transform: rotateY(0deg)}
-  50%{transform: rotateY(180deg)}
-  100%{transform: rotateY(180deg)}
+  0% {
+    transform: rotateY(0deg)
+  }
+  49% {
+    left: 40%;
+    transform: rotateY(0deg)
+  }
+  50% {
+    transform: rotateY(180deg)
+  }
+  100% {
+    transform: rotateY(180deg)
+  }
 }

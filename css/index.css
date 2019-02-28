@@ -52,6 +52,7 @@ body {
   line-height: 0.8;
   font-weight: bold;
   letter-spacing: -5px;
+  user-select: none;
 }
 #wrap .commonText {
   color: white;
@@ -86,7 +87,7 @@ body {
   left: 0;
   width: 0%;
   height: 4px;
-  background-color: white ;
+  background-color: white;
   z-index: 6;
   transition: 1s;
 }
@@ -96,7 +97,7 @@ body {
   height: 80px;
 }
 #wrap #headerWrap .header {
-  margin: 0 auto ;
+  margin: 0 auto;
   width: 1100px;
   height: 80px;
 }
@@ -136,7 +137,7 @@ body {
   width: 21px;
   height: 11px;
   background-image: url("../img/arrow.png");
-  transition: 1s ;
+  transition: 1s;
   z-index: 3;
 }
 #wrap #content {
@@ -307,7 +308,7 @@ body {
   width: 120px;
   height: 132px;
   transform-style: preserve-3d;
-  transition: 1s ;
+  transition: 1s;
 }
 #wrap #content .contentList .course .course3 .course3Item .front {
   position: absolute;
@@ -480,6 +481,9 @@ body {
   top: 290px;
 }
 #wrap #content .contentList .about .about3 .about3Item .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 260px;
   height: 200px;
 }

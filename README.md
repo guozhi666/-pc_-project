@@ -14,4 +14,19 @@
 
 - 背景图宽高没设置100%，导致缩放浏览器时背景图发生偏移
 
+- 切换其他页面几秒后再切回来，轮播图会混乱
 
+> 解决方案：
+> 添加一个窗口切换监听事件，当切换窗口时，禁掉自动轮播定时器，切换回来时再重新打开自动轮播;代码如下
+> ```
+> document.addEventListener('visibilitychange', function(){
+>     if(document.visibilityStart === 'hidden'){
+>         //禁掉定时器
+>         clearInterval(timeAuto);
+>     }else{
+>         //打开定时器
+>         //调用前面定义的自动轮播方法;
+>         autoPlay();
+>     }
+> })
+> ```
