@@ -1,0 +1,639 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "微软雅黑";
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+img {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+/*清除浮动*/
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#wrap {
+  width: 100%;
+  /*title公共样式*/
+  /*text公共样式*/
+}
+#wrap .commonTitle {
+  color: #009ee0;
+  font-size: 80px;
+  line-height: 0.8;
+  font-weight: bold;
+  letter-spacing: -5px;
+}
+#wrap .commonText {
+  color: white;
+  line-height: 1.5;
+  font-size: 15px;
+}
+#wrap #mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+#wrap #mask > div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #009ee0;
+  transition: 1s linear;
+}
+#wrap #mask .maskUp {
+  top: 0;
+}
+#wrap #mask .maskDown {
+  bottom: 0;
+}
+#wrap #mask .maskLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: white ;
+  z-index: 6;
+  transition: 1s;
+}
+#wrap #headerWrap {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+#wrap #headerWrap .header {
+  margin: 0 auto ;
+  width: 1100px;
+  height: 80px;
+}
+#wrap #headerWrap .header .logo {
+  margin-top: 15px;
+  float: left;
+}
+#wrap #headerWrap .header .nav {
+  float: right;
+  margin-top: 50px;
+}
+#wrap #headerWrap .header .nav .navList .navItem {
+  float: left;
+  margin-left: 40px;
+  position: relative;
+}
+#wrap #headerWrap .header .nav .navList .navItem a .up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #0F0F0F;
+  width: 0;
+  overflow: hidden;
+  transition: 1s width;
+}
+#wrap #headerWrap .header .nav .navList .navItem a .down {
+  color: #009EE0;
+}
+#wrap #headerWrap .header .nav .navList .navItem:hover .up {
+  width: 100%;
+}
+#wrap #headerWrap .header .arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  transform: translate(-50%);
+  width: 21px;
+  height: 11px;
+  background-image: url("../img/arrow.png");
+  transition: 1s ;
+  z-index: 3;
+}
+#wrap #content {
+  position: relative;
+  width: 100%;
+  background: #0F0F0F;
+  overflow: hidden;
+}
+#wrap #content .contentList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: grey;
+  transition: 1s;
+}
+#wrap #content .contentList .contentItem {
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+#wrap #content .contentList .contentItem:nth-child(1) {
+  background-image: url("../img/bg1.jpg");
+}
+#wrap #content .contentList .contentItem:nth-child(2) {
+  background-image: url("../img/bg2.jpg");
+}
+#wrap #content .contentList .contentItem:nth-child(3) {
+  background-image: url("../img/bg3.jpg");
+}
+#wrap #content .contentList .contentItem:nth-child(4) {
+  background-image: url("../img/bg4.jpg");
+}
+#wrap #content .contentList .contentItem:nth-child(5) {
+  background-image: url("../img/bg5.jpg");
+}
+#wrap #content .contentList .contentItem .contentInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 1100px;
+  height: 520px;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList {
+  width: 1100px;
+  height: 520px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: 1s;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1100px;
+  height: 520px;
+  visibility: hidden;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem.active {
+  visibility: visible;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem > div {
+  text-align: center;
+  line-height: 520px;
+  color: white;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem:nth-child(1) {
+  background: #dc6c5f;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem:nth-child(2) {
+  background: #95dc84;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem:nth-child(3) {
+  background: #64b9d2;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem:nth-child(4) {
+  background: #000000;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem.leftHide {
+  animation: leftH 2s linear;
+  visibility: hidden;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem.rightShow {
+  animation: rightS 2s linear;
+  visibility: visible;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem.leftShow {
+  animation: leftS 2s linear;
+  visibility: visible;
+}
+#wrap #content .contentList .contentItem .contentInner .homeList .homeItem.rightHide {
+  animation: rightH 2s linear;
+  visibility: hidden;
+}
+#wrap #content .contentList .contentItem .contentInner .homeNav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  transition: 1s;
+}
+#wrap #content .contentList .contentItem .contentInner .homeNav .homeIcon {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 2px;
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
+  border-radius: 50%;
+}
+#wrap #content .contentList .contentItem .contentInner .homeNav .homeIcon.active {
+  background: white;
+}
+#wrap #content .contentList .course {
+  overflow: hidden;
+}
+#wrap #content .contentList .course .course1 {
+  margin: 50px;
+}
+#wrap #content .contentList .course .course2 {
+  position: relative;
+  z-index: 3;
+  width: 400px;
+  margin-left: 50px;
+}
+#wrap #content .contentList .course .course3 {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 480px;
+  z-index: 4;
+  transform-style: preserve-3d;
+}
+#wrap #content .contentList .course .course3 .plus {
+  position: absolute;
+  top: -5px;
+  width: 9px;
+  height: 410px;
+  background-image: url("../img/plus_row.png");
+  background-repeat: no-repeat;
+}
+#wrap #content .contentList .course .course3 .plus:nth-child(1) {
+  left: -6px;
+}
+#wrap #content .contentList .course .course3 .plus:nth-child(2) {
+  left: 114px;
+}
+#wrap #content .contentList .course .course3 .plus:nth-child(3) {
+  left: 234px;
+}
+#wrap #content .contentList .course .course3 .plus:nth-child(4) {
+  left: 354px;
+}
+#wrap #content .contentList .course .course3 .plus:nth-child(5) {
+  left: 474px;
+}
+#wrap #content .contentList .course .course3 .course3Item {
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 132px;
+  transform-style: preserve-3d;
+  transition: 1s ;
+}
+#wrap #content .contentList .course .course3 .course3Item .front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 132px;
+  background-image: url("../img/pcwelt.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  backface-visibility: hidden;
+}
+#wrap #content .contentList .course .course3 .course3Item .back {
+  width: 120px;
+  height: 132px;
+  transform: rotateY(180deg);
+  background-color: #009EE0;
+  padding: 15px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+#wrap #content .contentList .course .course3 .course3Item:hover {
+  transform: rotateY(180deg);
+}
+#wrap #content .contentList .course .plane1 {
+  position: absolute;
+  width: 359px;
+  height: 283px;
+  background: url("../img/plane1.png") no-repeat;
+  left: 300px;
+  top: -100px;
+  transition: 1s;
+}
+#wrap #content .contentList .course .plane2 {
+  width: 309px;
+  height: 249px;
+  background: url("../img/plane2.png") no-repeat;
+  position: absolute;
+  left: -100px;
+  top: 200px;
+  transition: 1s;
+}
+#wrap #content .contentList .course .plane3 {
+  width: 230px;
+  height: 182px;
+  background: url('../img/plane3.png') no-repeat;
+  position: absolute;
+  left: 300px;
+  top: 400px;
+  transition: 1s;
+}
+#wrap #content .contentList .works .works1 {
+  margin: 50px 0 100px 50px;
+}
+#wrap #content .contentList .works .works2 {
+  margin-left: 50px;
+}
+#wrap #content .contentList .works .works2 .works2Item {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  width: 220px;
+  height: 133px;
+  margin-right: 1px;
+  z-index: 3;
+}
+#wrap #content .contentList .works .works2 .works2Item > img {
+  transition: 1s transform;
+}
+#wrap #content .contentList .works .works2 .works2Item:last-child {
+  width: 332px;
+  height: 133px;
+}
+#wrap #content .contentList .works .works2 .works2Item .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(25, 25, 25, 0.8);
+  color: white;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+}
+#wrap #content .contentList .works .works2 .works2Item .mask > span {
+  margin: 10px;
+}
+#wrap #content .contentList .works .works2 .works2Item .mask .icon {
+  background-image: url("../img/zoomico.png");
+  width: 32px;
+  height: 34px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  transition: 1s;
+}
+#wrap #content .contentList .works .works2 .works2Item:hover .mask {
+  opacity: 1;
+}
+#wrap #content .contentList .works .works2 .works2Item:hover .icon {
+  background-position: 0 -35px;
+}
+#wrap #content .contentList .works .works2 .works2Item:hover .imgs {
+  transform: rotate(30deg) scale(1.8);
+}
+#wrap #content .contentList .works .works3 .robot {
+  background-image: url("../img/robot.png");
+  background-repeat: no-repeat;
+  width: 167px;
+  height: 191px;
+  position: absolute;
+  left: 900px;
+  top: 170px;
+  animation: robotMove 5s linear infinite;
+  z-index: 3;
+}
+#wrap #content .contentList .works .pencel1 {
+  width: 180px;
+  height: 97px;
+  background: url('../img/pencel1.png') no-repeat;
+  position: absolute;
+  transition: 1s;
+  left: 500px;
+  top: 0;
+}
+#wrap #content .contentList .works .pencel2 {
+  width: 268px;
+  height: 38px;
+  background: url('../img/pencel2.png') no-repeat;
+  position: absolute;
+  transition: 1s;
+  left: 300px;
+  top: 250px;
+}
+#wrap #content .contentList .works .pencel3 {
+  width: 441px;
+  height: 231px;
+  background: url('../img/pencel3.png') no-repeat;
+  position: absolute;
+  transition: 1s;
+  left: 650px;
+  top: 300px;
+}
+#wrap #content .contentList .about {
+  position: relative;
+}
+#wrap #content .contentList .about .about1 {
+  margin: 50px 0 100px 50px;
+}
+#wrap #content .contentList .about .about2 {
+  width: 400px;
+  margin-left: 50px;
+}
+#wrap #content .contentList .about .about3 .about3Item {
+  position: absolute;
+  width: 260px;
+  height: 200px;
+  border: 5px rgba(255, 255, 255, 0.5) solid;
+  border-radius: 8px;
+  z-index: 4;
+}
+#wrap #content .contentList .about .about3 .about3Item:nth-child(1) {
+  transition: 1s;
+  left: 750px;
+  top: 50px;
+}
+#wrap #content .contentList .about .about3 .about3Item:nth-child(2) {
+  transition: 1s;
+  left: 600px;
+  top: 290px;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask {
+  width: 260px;
+  height: 200px;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 130px;
+  height: 100px;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem img {
+  position: absolute;
+  transition: 1s;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem:nth-child(1) img {
+  top: 0;
+  left: 0;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem:nth-child(2) img {
+  top: 0;
+  right: 0;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem:nth-child(3) img {
+  bottom: 0;
+  left: 0;
+}
+#wrap #content .contentList .about .about3 .about3Item .mask .maskList .maskItem:nth-child(4) img {
+  bottom: 0;
+  right: 0;
+}
+#wrap #content .contentList .about .about3 .about3Item:hover .maskList .maskItem:nth-child(1) img {
+  top: 100px;
+}
+#wrap #content .contentList .about .about3 .about3Item:hover .maskList .maskItem:nth-child(2) img {
+  right: 130px;
+}
+#wrap #content .contentList .about .about3 .about3Item:hover .maskList .maskItem:nth-child(3) img {
+  left: 130px;
+}
+#wrap #content .contentList .about .about3 .about3Item:hover .maskList .maskItem:nth-child(4) img {
+  bottom: 100px;
+}
+#wrap #content .contentList .team .team1 {
+  float: left;
+  width: 400px;
+  margin: 50px;
+  transition: 1s;
+}
+#wrap #content .contentList .team .team2 {
+  float: right;
+  margin: 50px;
+  margin-bottom: 0;
+  width: 400px;
+  transition: 1s;
+}
+#wrap #content .contentList .team .team3 {
+  position: relative;
+  width: 944px;
+  height: 448px;
+  margin: 0 auto;
+  margin-top: 230px;
+}
+#wrap #content .contentList .team .team3 canvas {
+  position: absolute;
+  top: 0;
+}
+#wrap #content .contentList .team .team3 .team3Item {
+  float: left;
+  width: 236px;
+  height: 448px;
+  background-image: url("../img/team.png");
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+#wrap #content .contentList .team .team3 .team3Item:nth-child(1) {
+  background-position: 3px 0px;
+}
+#wrap #content .contentList .team .team3 .team3Item:nth-child(2) {
+  background-position: -230px 0px;
+}
+#wrap #content .contentList .team .team3 .team3Item:nth-child(3) {
+  background-position: -483px 0px;
+}
+#wrap #content .contentList .team .team3 .team3Item:nth-child(4) {
+  background-position: -710px 0px;
+}
+#wrap #content .menuList {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#wrap #content .menuList .menuItem {
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+#wrap #content .menuList .menuItem.active {
+  background-color: white;
+}
+@keyframes leftH {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(-40%) rotateY(50deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-500px);
+  }
+}
+@keyframes rightS {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-500px);
+  }
+  50% {
+    transform: translateX(40%) rotateY(-50deg) scale(0.7);
+  }
+}
+@keyframes leftS {
+  0% {
+    visibility: hidden;
+    transform: translateZ(-500px);
+  }
+  50% {
+    transform: translateX(-40%) rotateY(50deg) scale(0.8);
+  }
+}
+@keyframes rightH {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    transform: translateX(40%) rotateY(-50deg) scale(0.7);
+  }
+  100% {
+    transform: translateZ(-500px);
+  }
+}
+@keyframes robotMove {
+  0% {
+    transform: rotateY(0deg);
+  }
+  49% {
+    left: 40%;
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
