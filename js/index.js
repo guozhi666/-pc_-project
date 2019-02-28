@@ -28,6 +28,9 @@ window.addEventListener('DOMContentLoaded',function(){
     navUps[0].style.width = '100%';
     arrow.style.left = navUps[0].getBoundingClientRect().left + navItems[0].offsetWidth/2 +'px';
 
+    // document.addEventListener('mousewheel',function(event){
+    //     event.preventDefault();
+    // })
     //响应式缩放
     window.onresize = function(){
         contentBind();
@@ -62,6 +65,7 @@ window.addEventListener('DOMContentLoaded',function(){
         for(var j = 0; j<navUps.length; j++){
             //清楚所有样式
             navUps[j].style.width = '';
+            //当页面切换时，重置所有出场动画
             animationArr[j].outAnimation();
         }
         //字体出现
@@ -99,8 +103,21 @@ window.addEventListener('DOMContentLoaded',function(){
             });
 
         }
+
+        // document.onkeydown = function(event){
+        //     if(event.ctrlKey){
+        //         return;
+        //     }
+        // }
         function scrollMove(event){
             event = event || window.event;
+
+            //监听键盘ctrl事件，
+            //若按下滚动滚轮，浏览器缩放，页面不切屏；
+            if(event.ctrlKey){
+                return;
+            }
+
             var flag = '';
             if(event.wheelDelta){
                 //ie/chrome
@@ -168,7 +185,7 @@ window.addEventListener('DOMContentLoaded',function(){
                 setTimeout(function(){
                     isMoving = false;
                 }, 2000);
-                //每次点击清楚自动轮播
+                //每次点击清除自动轮播
                 clearTimeout(timeAuto);
                 //1.重置所有小圆点样式
                 for(var j = 0; j<homeIcons.length; j++){
@@ -254,6 +271,8 @@ window.addEventListener('DOMContentLoaded',function(){
                     myCanvas.width = this.offsetWidth;
                     myCanvas.height = this.offsetHeight;
                     team3.appendChild(myCanvas);
+
+                    //添加cancas气泡效果
                     addAnimation();
                 }
                 myCanvas.style.left = this.offsetLeft + 'px';

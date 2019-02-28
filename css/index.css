@@ -160,18 +160,23 @@ body {
 }
 #wrap #content .contentList .contentItem:nth-child(1) {
   background-image: url("../img/bg1.jpg");
+  background-size: 100% 100%;
 }
 #wrap #content .contentList .contentItem:nth-child(2) {
   background-image: url("../img/bg2.jpg");
+  background-size: 100% 100%;
 }
 #wrap #content .contentList .contentItem:nth-child(3) {
   background-image: url("../img/bg3.jpg");
+  background-size: 100% 100%;
 }
 #wrap #content .contentList .contentItem:nth-child(4) {
   background-image: url("../img/bg4.jpg");
+  background-size: 100% 100%;
 }
 #wrap #content .contentList .contentItem:nth-child(5) {
   background-image: url("../img/bg5.jpg");
+  background-size: 100% 100%;
 }
 #wrap #content .contentList .contentItem .contentInner {
   position: absolute;
